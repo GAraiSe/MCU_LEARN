@@ -1,0 +1,74 @@
+Dependencies for Project 'prjv1', Target 'Source': (DO NOT MODIFY !)
+CompilerVersion: 6240000::V6.24::ARMCLANG
+F (.\Source\Driver\PFPA.c)(0x660414D0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/pfpa.o -MMD)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+F (.\Source\Driver\GPIO.c)(0x69EA31CC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/gpio.o -MMD)
+I (Source\Driver\GPIO.h)(0x69EA1C0C)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+F (.\Source\Driver\WDT.c)(0x673A334A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/wdt.o -MMD)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400_Def.h)(0x69D4CB8E)
+I (Source\Driver\WDT.h)(0x660414D0)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+F (.\Source\Driver\Utility.c)(0x674363C8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/utility.o -MMD)
+I (Source\Driver\Utility.h)(0x674362F8)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+F (.\Source\Module\KeyScan.c)(0x69EA19CF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Module/KeyScan.h -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/keyscan.o -MMD)
+I (Source\Module\KeyScan.h)(0x69EA195A)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+F (.\Source\Module\FSM.c)(0x69EA326C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Module/KeyScan.h -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/fsm.o -MMD)
+I (Source\Module\FSM.h)(0x69EA1F86)
+I (Source\Module\Segment.h)(0x69E9ED41)
+I (Source\Module\Buzzer.h)(0x69EA1CFD)
+I (Source\Module\EEPROM.h)(0x69EA2467)
+F (.\Source\Module\RTC.c)(0x69EA288E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Module/KeyScan.h -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/rtc.o -MMD)
+I (Source\Module\RTC.h)(0x69E9ECA8)
+I (Source\Module\FSM.h)(0x69EA1F86)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+F (.\Source\Module\Segment.c)(0x69EA32FF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Module/KeyScan.h -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/segment.o -MMD)
+I (Source\Module\Segment.h)(0x69E9ED41)
+I (Source\Module\..\Driver\GPIO.h)(0x69EA1C0C)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+F (.\Source\Module\Buzzer.c)(0x69EA1EF7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Module/KeyScan.h -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/buzzer.o -MMD)
+I (Source\Module\Buzzer.h)(0x69EA1CFD)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+I (Source\Module\..\Driver\CT16.h)(0x660414D0)
+I (Source\Module\..\Driver\CT16B0.h)(0x66F96382)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400_Def.h)(0x69D4CB8E)
+F (.\Source\Module\EEPROM.c)(0x69EA2969)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Module/KeyScan.h -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/eeprom.o -MMD)
+I (Source\Module\EEPROM.h)(0x69EA2467)
+I (Source\Module\..\Driver\Flash.h)(0x660414D0)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400_Def.h)(0x69D4CB8E)
+F (.\Source\UserAPP\main.c)(0x69EA289D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/main.o -MMD)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
+I (Source\UserAPP\..\Driver\GPIO.h)(0x69EA1C0C)
+I (Source\UserAPP\..\Module\KeyScan.h)(0x69EA195A)
+I (Source\UserAPP\..\Module\Buzzer.h)(0x69EA1CFD)
+I (Source\UserAPP\..\Module\Segment.h)(0x69E9ED41)
+I (Source\UserAPP\..\Module\RTC.h)(0x69E9ECA8)
+I (Source\UserAPP\..\Module\FSM.h)(0x69EA1F86)
+F (RTE/Device/SN32F407F/startup_SN32F400.s)(0x69D4CB8E)(--target=arm-arm-none-eabi -mcpu=cortex-m0 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 543" -Wa,armasm,--pd,"SN32F400 SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_sn32f400.o)
+F (RTE/Device/SN32F407F/system_SN32F400.c)(0x69D4CB8E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Source/Driver -I ./Source/Module -I ./Source/Module-I./RTE/_Source-IC:/Users/phamt/AppData/Local/Arm/Packs/ARM/CMSIS/6.3.0/CMSIS/Core/Include-IC:/Users/phamt/AppData/Local/Arm/Packs/SONiX/SN32F4_DFP/1.1.1/Device/Include-D__UVISION_VERSION="543" -DSN32F400 -D_RTE_-o ./objects/system_sn32f400.o -MMD)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\SN32F400.h)(0x69D4CB8E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm0.h)(0x69D4C64E)
+I (C:\Users\phamt\AppData\Local\Arm\Packs\SONiX\SN32F4_DFP\1.1.1\Device\Include\system_SN32F400.h)(0x69D4CB8E)
