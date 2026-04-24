@@ -10,6 +10,7 @@
 #include "Segment.h"
 #include "Buzzer.h"
 #include "EEPROM.h"
+#include <SN32F400.h>
 
 /*_____ D E F I N I T I O N S ______________________________________________*/
 #define TIMEOUT_30S_MAX     30u     // seconds until auto-return to NORMAL
@@ -246,6 +247,13 @@ void FSM_Run(void)
     if (ev == EV_TICK_500MS)
     {
         Digital_BlinkTick();
+
+        /* LED D6 (P3.8): blink only in alarm-set states */
+        if (g_state == STATE_SET_ALARM_HOUR || g_state == STATE_SET_ALARM_MIN)
+            SN_GPIO3->DATA ^= (1u << 8);   // toggle
+        else
+            SN_GPIO3->BCLR  = (1u << 8);   // OFF
+
         return;
     }
 
@@ -381,6 +389,10 @@ void FSM_Run(void)
 
     UpdateDisplay();
     UpdateBlink();
+
+    /* LED D6: ensure OFF when leaving alarm-set states */
+    if (g_state != STATE_SET_ALARM_HOUR && g_state != STATE_SET_ALARM_MIN)
+        SN_GPIO3->BCLR = (1u << 8);
 
     if ((prev_state != STATE_NORMAL) && (g_state == STATE_NORMAL))
     {

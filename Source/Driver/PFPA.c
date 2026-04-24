@@ -204,7 +204,7 @@
 #define UART0_EN		0	//e0
 #define UART1_EN		0	//e1
 #define SPI0_EN			0	//e2
-#define I2C0_EN			0	//e3
+#define I2C0_EN			1	//e3
 #define CT16B0_EN		0	//e4
 #define CT16B1_EN		0	//e5
 #define CT16B5_EN		0	//e6
@@ -213,7 +213,7 @@
 #define PFPA_UART0_VAL			0x00000000
 #define PFPA_UART1_VAL			0x00000000
 #define PFPA_SPI0_VAL			  0x00000000
-#define PFPA_I2C0_VAL			  0x00000000
+#define PFPA_I2C0_VAL			  0x0000000A	/* SCL0=P0.10 (sel2), SDA0=P0.11 (sel2) */
 #define PFPA_CT16B0_VAL		  0x00000000
 #define PFPA_CT16B1_VAL		  0x00000000
 #define PFPA_CT16B5_VAL		  0x00000000

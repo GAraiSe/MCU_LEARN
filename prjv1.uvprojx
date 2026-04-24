@@ -82,7 +82,7 @@
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>fromelf --text -z "D:\407-20260407T082652Z-3-001\407\SN32F407_EVK_DEMO_KeilV6\BTV1\Objects" &gt; size.txt</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -403,6 +403,11 @@
               <FileName>Utility.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\Driver\Utility.c</FilePath>
+            </File>
+            <File>
+              <FileName>I2C0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Driver\I2C0.c</FilePath>
             </File>
           </Files>
         </Group>

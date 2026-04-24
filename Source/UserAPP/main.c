@@ -13,6 +13,8 @@
 /*_____ I N C L U D E S ____________________________________________________*/
 #include "SN32F400.h"
 #include "..\Driver\GPIO.h"
+#include "..\Driver\PFPA.h"
+#include "..\Driver\I2C.h"
 #include "..\Module\KeyScan.h"
 #include "..\Module\Buzzer.h"
 #include "..\Module\Segment.h"
@@ -60,6 +62,8 @@ int main(void)
 
     /* ---- Hardware init ---- */
     GPIO_Init();
+    PFPA_Init();
+    I2C0_Init();
 
     /* ---- SysTick: 1ms @ 48MHz IHRC ---- */
     SysTick_Config(48000);          // 48 000 000 / 48 000 = 1ms

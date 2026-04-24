@@ -3,17 +3,16 @@
 void GPIO_Init(void)
 {
     // -------------------------------------------------------
-    // 7-SEG: SEG A~DP = P0.0 ~ P0.7 (output, init LOW = off)
+    // 7-SEG: SEG A~G = P0.0 ~ P0.6 (output, init LOW = off)
     // -------------------------------------------------------
-    SN_GPIO0->MODE |= 0xFF;          // P0.0~P0.7 = output
-    SN_GPIO0->BCLR  = 0xFF;          // t?t t?t c? segment
+    SN_GPIO0->MODE |= 0x7F;          // P0.0~P0.6 = output
+    SN_GPIO0->BCLR  = 0x7F;          // tat tat ca segment
 
     // -------------------------------------------------------
-    // 7-SEG: COM0~COM3 = P1.9 ~ P1.12 (output, init LOW = t?t)
-    // COM dùng BJT: base HIGH -> transistor ON -> COM kéo GND -> digit sáng
+    // 7-SEG: COM0~COM3 = P1.9 ~ P1.12 (output, init LOW)
     // -------------------------------------------------------
-    SN_GPIO1->MODE |= (0xF << 9);    // P1.9~P1.12 = output
-    SN_GPIO1->BCLR  = (0xF << 9);    // t?t t?t c? COM
+    SN_GPIO1->MODE |= (0xF << 9);
+    SN_GPIO1->BCLR  = (0xF << 9);
 
     // -------------------------------------------------------
     // KeyScan ROW: P1.4 ~ P1.7 (output, init HIGH)
@@ -26,4 +25,16 @@ void GPIO_Init(void)
     // -------------------------------------------------------
     SN_GPIO2->MODE &= ~(0xF << 4);
     SN_GPIO2->CFG  &= ~(0xFF << 8);  // CFG4~7 = 00 = pull-up
+
+    // -------------------------------------------------------
+    // I2C0: SCL=P0.10, SDA=P0.11 (open-drain, peripheral controlled)
+    // -------------------------------------------------------
+    SN_GPIO0->MODE &= ~(0x3u << 10);  // P0.10, P0.11 = input (I2C peripheral drives)
+    SN_GPIO0->CFG  |=  (0x5u << 20);  // CFG10=01, CFG11=01 = open-drain
+
+    // -------------------------------------------------------
+    // LED D6: P3.8 (output, init OFF = LOW)
+    // -------------------------------------------------------
+    SN_GPIO3->MODE |=  (1u << 8);
+    SN_GPIO3->BCLR  =  (1u << 8);
 }
