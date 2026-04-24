@@ -20,7 +20,7 @@
 #include "..\Module\FSM.h"
 
 /*_____ D E F I N I T I O N S ______________________________________________*/
-#define SCAN_PERIOD_MS      1u      // Digital_Scan call period
+#define SCAN_PERIOD_MS      1u      // Digital_Scan call period (every 1ms)
 #define BLINK_PERIOD_MS     500u    // 500ms blink toggle
 
 /*_____ V A R I A B L E S __________________________________________________*/
@@ -107,5 +107,6 @@ int main(void)
 
         /* Run FSM */
         FSM_Run();
+        FSM_Task();
     }
 }

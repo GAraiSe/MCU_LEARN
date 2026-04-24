@@ -7,6 +7,7 @@
 #define BUZZER_PWM0_SEL_POS       0u
 #define BUZZER_PWM0_SEL_MASK      (0x3u << BUZZER_PWM0_SEL_POS)
 #define BUZZER_PWM0_SEL_P30       (0x1u << BUZZER_PWM0_SEL_POS)
+#define BUZZER_TONE_HZ            2800u
 
 static uint8_t s_buzzer_enabled = 0;
 
@@ -26,21 +27,17 @@ void Buzzer_Init(void)
 
     s_buzzer_enabled = 1;
 
-    Buzzer_Stop();
+    Buzzer_Off();
 }
 
-void Buzzer_SetPitch(BuzzerPitch_t pitch)
+void Buzzer_On(void)
 {
-    uint32_t hz;
     uint32_t period;
 
-    (void)pitch;
     if (!s_buzzer_enabled)
         return;
 
-    /* Use a louder fixed tone near common buzzer resonance */
-    hz = 2800u;
-    period = BUZZER_HCLK_FREQ / hz;
+    period = BUZZER_HCLK_FREQ / BUZZER_TONE_HZ;
     if (period < 2u)
         period = 2u;
 
@@ -51,7 +48,7 @@ void Buzzer_SetPitch(BuzzerPitch_t pitch)
     SN_CT16B0->TMRCTRL = 1;
 }
 
-void Buzzer_Stop(void)
+void Buzzer_Off(void)
 {
     if (!s_buzzer_enabled)
         return;

@@ -38,6 +38,7 @@ typedef enum
 /*_____ F U N C T I O N S __________________________________________________*/
 void FSM_Init(void);
 void FSM_Tick1ms(void);
+void FSM_Task(void);         // call from main loop (handles deferred work)
 void FSM_SendEvent(FSM_Event_t ev);
 void FSM_Run(void);                     // call in main loop
 

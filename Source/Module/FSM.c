@@ -60,25 +60,12 @@ static void TimeIncrement(void)
     if (g_hour   >= 24) { g_hour   = 0;              }
 }
 
-static void Buzzer_SetOn(uint8_t on)
-{
-    if (on)
-    {
-        Buzzer_SetPitch(BUZZER_PITCH_A4);
-        g_buzzer_on = 1;
-    }
-    else
-    {
-        Buzzer_Stop();
-        g_buzzer_on = 0;
-    }
-}
-
 static void Buzzer_StartPip(void)
 {
     g_buzzer_mode = BUZZER_MODE_PIP;
     g_buzzer_ms = BUZZER_PIP_MS;
-    Buzzer_SetOn(1);
+    Buzzer_On();
+    g_buzzer_on = 1;
 }
 
 static void Buzzer_StartAlarmPattern(void)
@@ -86,7 +73,8 @@ static void Buzzer_StartAlarmPattern(void)
     g_buzzer_mode = BUZZER_MODE_ALARM;
     g_buzzer_alarm_total_ms = BUZZER_ALARM_MS;
     g_buzzer_alarm_phase_ms = BUZZER_ALARM_PHASE_MS;
-    Buzzer_SetOn(1);
+    Buzzer_On();
+    g_buzzer_on = 1;
 }
 
 static void CheckAlarm(void)
@@ -161,7 +149,7 @@ void FSM_Init(void)
     g_buzzer_alarm_phase_ms = 0;
     g_buzzer_on = 0;
     g_alarm_save_pending = 0;
-    Buzzer_Stop();
+    Buzzer_Off();
     EEPROM_AlarmLoad(&g_alarm_hour, &g_alarm_minute);
     g_alarm_saved_hour = g_alarm_hour;
     g_alarm_saved_minute = g_alarm_minute;
@@ -180,7 +168,8 @@ void FSM_Tick1ms(void)
         if (g_buzzer_ms == 0u)
         {
             g_buzzer_mode = BUZZER_MODE_IDLE;
-            Buzzer_SetOn(0);
+            Buzzer_Off();
+            g_buzzer_on = 0;
         }
     }
     else if (g_buzzer_mode == BUZZER_MODE_ALARM)
@@ -194,17 +183,22 @@ void FSM_Tick1ms(void)
         {
             g_buzzer_mode = BUZZER_MODE_IDLE;
             g_alarm_active = 0;
-            Buzzer_SetOn(0);
+            Buzzer_Off();
+            g_buzzer_on = 0;
             return;
         }
 
         if (g_buzzer_alarm_phase_ms == 0u)
         {
             g_buzzer_alarm_phase_ms = BUZZER_ALARM_PHASE_MS;
-            Buzzer_SetOn((uint8_t)!g_buzzer_on);
+            g_buzzer_on ^= 1u;
+            if (g_buzzer_on) Buzzer_On(); else Buzzer_Off();
         }
     }
+}
 
+void FSM_Task(void)
+{
     if (g_alarm_save_pending)
     {
         EEPROM_AlarmSave(g_alarm_hour, g_alarm_minute);

@@ -1,6 +1,9 @@
 #include "KeyScan.h"
 #include "SN32F400.h"
 
+/* Short settling delay after driving a row LOW (~few us at 48MHz) */
+#define KEYSCAN_SETTLE_CYCLES   10u
+
 static uint16_t key_last = 0;
 static uint16_t key_press_edge = 0;
 
@@ -9,10 +12,10 @@ uint16_t KeyScan(void)
     uint16_t result = 0;
     uint8_t  col;
 
-    // --- Qut ROW P1.4 ---
+    // --- Quï¿½t ROW P1.4 ---
     SN_GPIO1->DATA |=  (0xF << 4);   // t?t c? ROW = HIGH
     SN_GPIO1->DATA &= ~(1 << 4);     // P1.4 = LOW
-    for(volatile int i = 0; i < 10; i++);
+    for(volatile int i = 0; i < KEYSCAN_SETTLE_CYCLES; i++);
 
     col = (SN_GPIO2->DATA >> 4) & 0xF;
     // SW3:  COL P2.4 = bit0 c?a col
@@ -20,19 +23,19 @@ uint16_t KeyScan(void)
     // SW6:  COL P2.7 = bit3 c?a col
     if (!(col & (1 << 3))) result |= KEY_SW6;
 
-    // --- Qut ROW P1.5 ---
+    // --- Quï¿½t ROW P1.5 ---
     SN_GPIO1->DATA |=  (0xF << 4);   // t?t c? ROW = HIGH
     SN_GPIO1->DATA &= ~(1 << 5);     // P1.5 = LOW
-    for(volatile int i = 0; i < 10; i++);
+    for(volatile int i = 0; i < KEYSCAN_SETTLE_CYCLES; i++);
 
     col = (SN_GPIO2->DATA >> 4) & 0xF;
     // SW10: COL P2.7 = bit3 c?a col
     if (!(col & (1 << 3))) result |= KEY_SW10;
 
-    // --- Qut ROW P1.7 ---
+    // --- Quï¿½t ROW P1.7 ---
     SN_GPIO1->DATA |=  (0xF << 4);   // t?t c? ROW = HIGH
     SN_GPIO1->DATA &= ~(1 << 7);     // P1.7 = LOW
-    for(volatile int i = 0; i < 10; i++);
+    for(volatile int i = 0; i < KEYSCAN_SETTLE_CYCLES; i++);
 
     col = (SN_GPIO2->DATA >> 4) & 0xF;
     // SW16: COL P2.4 = bit0 c?a col
