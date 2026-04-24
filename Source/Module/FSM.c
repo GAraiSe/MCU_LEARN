@@ -137,7 +137,7 @@ void FSM_Init(void)
 {
     g_state     = STATE_NORMAL;
     g_event     = EV_NONE;
-    g_hour      = 12;
+    g_hour      = 0;
     g_minute    = 0;
     g_second    = 0;
     g_timeout_cnt = 0;
