@@ -248,11 +248,11 @@ void FSM_Run(void)
     {
         Digital_BlinkTick();
 
-        /* LED D6 (P3.8): blink only in alarm-set states */
+        /* LED D6 (P3.8): blink only in alarm-set states, active-low */
         if (g_state == STATE_SET_ALARM_HOUR || g_state == STATE_SET_ALARM_MIN)
             SN_GPIO3->DATA ^= (1u << 8);   // toggle
         else
-            SN_GPIO3->BCLR  = (1u << 8);   // OFF
+            SN_GPIO3->BSET  = (1u << 8);   // OFF (active-low = HIGH)
 
         return;
     }
@@ -392,7 +392,7 @@ void FSM_Run(void)
 
     /* LED D6: ensure OFF when leaving alarm-set states */
     if (g_state != STATE_SET_ALARM_HOUR && g_state != STATE_SET_ALARM_MIN)
-        SN_GPIO3->BCLR = (1u << 8);
+        SN_GPIO3->BSET = (1u << 8);   // OFF (active-low = HIGH)
 
     if ((prev_state != STATE_NORMAL) && (g_state == STATE_NORMAL))
     {

@@ -33,8 +33,8 @@ void GPIO_Init(void)
     SN_GPIO0->CFG  |=  (0x5u << 20);  // CFG10=01, CFG11=01 = open-drain
 
     // -------------------------------------------------------
-    // LED D6: P3.8 (output, init OFF = LOW)
+    // LED D6: P3.8 (output, active-low, init OFF = HIGH)
     // -------------------------------------------------------
     SN_GPIO3->MODE |=  (1u << 8);
-    SN_GPIO3->BCLR  =  (1u << 8);
+    SN_GPIO3->BSET  =  (1u << 8);   // HIGH = OFF (active-low)
 }
