@@ -27,7 +27,7 @@
 
 /*_____ V A R I A B L E S __________________________________________________*/
 static volatile uint32_t g_tick_ms      = 0;    // millisecond counter from SysTick
-static volatile uint8_t  g_flag_scan    = 0;    // set every 2ms
+static volatile uint8_t  g_flag_scan    = 0;	    // set every 2ms
 static volatile uint8_t  g_flag_500ms   = 0;    // set every 500ms
 
 /*_____ F U N C T I O N S __________________________________________________*/

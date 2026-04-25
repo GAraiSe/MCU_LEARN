@@ -23,6 +23,7 @@ void Digital_DisplayHEX(uint16_t hex);
 void Digital_DisplayTime(uint8_t hour, uint8_t minute);
 void Digital_SetBlink(uint8_t digit_mask);   // bit0=digit0, bit1=digit1, ...
 void Digital_BlinkTick(void);                // toggle blink state, call every 500ms
+uint8_t Digital_GetBlinkState(void);         // 0=visible, 1=hidden
 void Digital_Scan(void);
 
 #endif /* __SEGMENT_H */

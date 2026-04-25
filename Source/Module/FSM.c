@@ -14,7 +14,7 @@
 
 /*_____ D E F I N I T I O N S ______________________________________________*/
 #define TIMEOUT_30S_MAX     30u     // seconds until auto-return to NORMAL
-#define BUZZER_PIP_MS       300u
+#define BUZZER_PIP_MS       250u
 #define BUZZER_ALARM_MS     5000u
 #define BUZZER_ALARM_PHASE_MS 500u
 
@@ -126,6 +126,9 @@ static void UpdateBlink(void)
             Digital_SetBlink(0x00);
             break;
     }
+
+    /* LED OFF on state transition - will sync on next EV_TICK_500MS */
+    SN_GPIO3->BSET = (1u << 8);
 }
 
 /*_____ P U B L I C   F U N C T I O N S ___________________________________*/
@@ -248,11 +251,16 @@ void FSM_Run(void)
     {
         Digital_BlinkTick();
 
-        /* LED D6 (P3.8): blink only in alarm-set states, active-low */
+        /* LED D6 (P3.8): synced with blink_state - same source as segment, active-low */
         if (g_state == STATE_SET_ALARM_HOUR || g_state == STATE_SET_ALARM_MIN)
-            SN_GPIO3->DATA ^= (1u << 8);   // toggle
+        {
+            if (Digital_GetBlinkState())
+                SN_GPIO3->BSET = (1u << 8);   // OFF (active-low = HIGH)
+            else
+                SN_GPIO3->BCLR = (1u << 8);   // ON  (active-low = LOW)
+        }
         else
-            SN_GPIO3->BSET  = (1u << 8);   // OFF (active-low = HIGH)
+            SN_GPIO3->BSET = (1u << 8);       // OFF
 
         return;
     }

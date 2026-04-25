@@ -91,6 +91,11 @@ void Digital_BlinkTick(void)
     blink_state ^= 1;
 }
 
+uint8_t Digital_GetBlinkState(void)
+{
+    return blink_state;
+}
+
 /* ========================= CORE SCAN ========================= */
 
 static inline void COM_AllOff(void)
@@ -131,10 +136,7 @@ void Digital_Scan(void)
     if ((blink_mask >> com_scan) & 0x01)
     {
         if (blink_state)
-        {
-            COM_On(com_scan);
-            return;
-        }
+            return;   // digit hidden: do not drive COM or SEG
     }
 
     /* OUTPUT SEGMENT */
