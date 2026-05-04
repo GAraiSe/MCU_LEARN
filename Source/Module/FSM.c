@@ -279,7 +279,7 @@ void FSM_Run(void)
                 g_timeout_cnt = 0;
                 FSM_SendEvent(EV_TIMEOUT_30S);
                 return;
-            }
+            }	
         }
 
         if (g_state == STATE_NORMAL)

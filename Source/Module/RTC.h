@@ -12,5 +12,6 @@
 
 /*_____ F U N C T I O N S __________________________________________________*/
 void RTC_Init(void);
+uint8_t RTC_GetClockSource(void);  // 0=ILRC, 1=ELS
 
 #endif /* __RTC_H */

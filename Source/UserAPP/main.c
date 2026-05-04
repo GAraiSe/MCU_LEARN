@@ -23,12 +23,12 @@
 
 /*_____ D E F I N I T I O N S ______________________________________________*/
 #define SCAN_PERIOD_MS      1u      // Digital_Scan call period (every 1ms)
-#define BLINK_PERIOD_MS     500u    // 500ms blink toggle
+#define BLINK_PERIOD_MS     250u    // 250ms blink toggle (faster for alarm/time setting)
 
 /*_____ V A R I A B L E S __________________________________________________*/
 static volatile uint32_t g_tick_ms      = 0;    // millisecond counter from SysTick
-static volatile uint8_t  g_flag_scan    = 0;	    // set every 2ms
-static volatile uint8_t  g_flag_500ms   = 0;    // set every 500ms
+static volatile uint8_t  g_flag_scan    = 0;	    // set every 1ms
+static volatile uint8_t  g_flag_blink   = 0;    // set every 250ms for blink
 
 /*_____ F U N C T I O N S __________________________________________________*/
 
@@ -40,13 +40,13 @@ void SysTick_Handler(void)
 {
     g_tick_ms++;
 
-    /* 2ms flag -> 7-seg scan */
+    /* 1ms flag -> 7-seg scan */
     if ((g_tick_ms % SCAN_PERIOD_MS) == 0)
         g_flag_scan = 1;
 
-    /* 500ms flag -> blink */
+    /* 250ms flag -> blink */
     if ((g_tick_ms % BLINK_PERIOD_MS) == 0)
-        g_flag_500ms = 1;
+        g_flag_blink = 1;
 }
 
 /*****************************************************************************
@@ -83,18 +83,18 @@ int main(void)
             FSM_Tick1ms();
         }
 
-        /* 2ms: refresh 7-seg display */
+        /* 1ms: refresh 7-seg display */
         if (g_flag_scan)
         {
             g_flag_scan = 0;
             Digital_Scan();
         }
 
-        /* 500ms: blink tick */
-        if (g_flag_500ms)
+        /* 250ms: blink tick */
+        if (g_flag_blink)
         {
-            g_flag_500ms = 0;
-            FSM_SendEvent(EV_TICK_500MS);
+            g_flag_blink = 0;
+            FSM_SendEvent(EV_TICK_500MS);  // Keep event name for compatibility
         }
 
         KeyScan_Update();
